@@ -17,11 +17,11 @@ console.log('API rodando na porta ' + port);
 function normalizePort(val) {
     const port = parseInt(val, 0);
 
-    if (isNaN(port)){
+    if (isNaN(port)) {
         return val;
     }
 
-    if (port >= 0){
+    if (port >= 0) {
         return port;
     }
 
@@ -29,7 +29,7 @@ function normalizePort(val) {
 }
 
 function onError(error) {
-    if (error.syscall !== 'listen')  {
+    if (error.syscall !== 'listen') {
         throw error;
     }
 
@@ -53,8 +53,8 @@ function onError(error) {
 
 function onListening() {
     const addr = server.address();
-    const bind = typeof addr === 'string'
-        ? 'pipe ' + port
-        : 'port ' + addr.port;
+    const bind = typeof addr === 'string' ?
+        'pipe ' + port :
+        'port ' + addr.port;
     debug('listening on ' + bind);
 }
